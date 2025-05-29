@@ -344,7 +344,7 @@
           "type": "product-card",
           "static": true,
           "settings": {
-            "product": "gift-card",
+            "product": "",
             "product_card_gap": 16,
             "inherit_color_scheme": true,
             "color_scheme": "",
@@ -361,7 +361,7 @@
         }
       },
       "settings": {
-        "product": "gift-card",
+        "product": "the-draft-snowboard",
         "recommendation_type": "related",
         "layout_type": "carousel",
         "carousel_on_mobile": false,
