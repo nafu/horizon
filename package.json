@@ -1,0 +1,20 @@
+{
+  "name": "horizon-shopify-theme",
+  "version": "1.0.0",
+  "description": "A Shopify theme with integrated Lighthouse CI for performance monitoring",
+  "scripts": {
+    "lighthouse": "lhci autorun",
+    "lighthouse:collect": "lhci collect",
+    "lighthouse:assert": "lhci assert"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nafu/horizon.git"
+  },
+  "devDependencies": {
+    "@lhci/cli": "^0.13.0"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  }
+}
