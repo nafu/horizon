@@ -11,7 +11,19 @@ module.exports = {
       ],
       // Lighthouse settings
       settings: {
-        chromeFlags: '--no-sandbox --disable-dev-shm-usage'
+        chromeFlags: '--no-sandbox --disable-dev-shm-usage',
+        // Authentication for private stores
+        ...(process.env.SHOPIFY_STORE_PASSWORD && {
+          extraHeaders: JSON.stringify({
+            'Authorization': `Basic ${Buffer.from(`${process.env.SHOPIFY_STORE_USERNAME || ''}:${process.env.SHOPIFY_STORE_PASSWORD}`).toString('base64')}`
+          })
+        }),
+        // Custom headers for password-protected stores
+        ...(process.env.SHOPIFY_ACCESS_TOKEN && {
+          extraHeaders: JSON.stringify({
+            'X-Shopify-Access-Token': process.env.SHOPIFY_ACCESS_TOKEN
+          })
+        })
       }
     },
     assert: {
